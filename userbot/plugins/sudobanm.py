@@ -8,8 +8,7 @@ from userbot.utils import edit_or_reply
 from . import *
 
 
-
-@ultroid_cmd(pattern=r"sudogban$")
+@catub.cat_cmd(pattern=r"sudogban$")
 async def _(event):
     reply_message = await event.get_reply_message()
     username = reply_message.sender.first_name
