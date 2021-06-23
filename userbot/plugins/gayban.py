@@ -6,7 +6,7 @@ import sys
 import random
 from userbot.utils import edit_or_reply
 from . import *
-
+# ALL CREDITS of This Goes to @stormshadow3000
 
 @catub.cat_cmd(pattern=r"gayban$")
 async def _(event):
