@@ -16,15 +16,15 @@ thumb_image_path = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg"
 
 
 @catub.cat_cmd(
-    pattern="rnup ?(-f)? (.*)",
-    command=("rnup", plugin_category),
+    pattern="rename ?(-f)? (.*)",
+    command=("rename", plugin_category),
     info={
         "header": "To rename and upload the replied file.",
         "flags": {"f": "will upload as file that is document not streamable."},
         "description": "If flag is not used then will upload as steamable file",
         "usage": [
-            "{tr}rnup <new file name>",
-            "{tr}rnup -f <new file name>",
+            "{tr}rename <new file name>",
+            "{tr}rename -f <new file name>",
         ],
     },
 )
@@ -42,7 +42,7 @@ async def _(event):
     input_str = event.pattern_match.group(2)
     if not event.reply_to_msg_id:
         return await catevent.edit(
-            "**Syntax : **`.rnup file name` as reply to a Telegram media"
+            "**Syntax : **`.rename file name` as reply to a Telegram media"
         )
     start = datetime.now()
     file_name = input_str
